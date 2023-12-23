@@ -17,22 +17,21 @@ describe('Forms, Buttons & Checkbox', () => {
     cy.get('[data-test="contact-form"]').should('be.visible')
 
     // Fill the form
-    cy.get('#g1103-name').type('George')
-    cy.contains('Water').click() 
-    cy.contains('Red').click()  
-    // cy.get('#g1103-whatisyourfavoritedrink-Water').check() - alternative way
-
-    cy.get('#email').type('george@test.com')
-    cy.get('#contact-form-comment-message').type('Message test')
+    cy.get('#g1103-name').type(name)
+    cy.contains(drink).click() 
+    cy.contains(color).click()  
+    // cy.get('#g1103-whatisyourfavoritedrink-Water').check() - an alternative way
+    cy.get('#email').type(email)
+    cy.get('#contact-form-comment-message').type(message)
     cy.contains('Submit').click()
 
     // Assert form details
     cy.get('.contact-form-submission').should('be.visible')
-    cy.get('.field-value').contains('George').should('be.visible')
-    cy.get('.field-value').contains('Water').should('be.visible')
-    cy.get('.field-value').contains('Red').should('be.visible')
-    cy.get('.field-value').contains('george@test.com').should('be.visible')
-    cy.get('.field-value').contains('Message test').should('be.visible')
+    cy.get('.field-value').contains(name).should('be.visible')
+    cy.get('.field-value').contains(drink).should('be.visible')
+    cy.get('.field-value').contains(color).should('be.visible')
+    cy.get('.field-value').contains(email).should('be.visible')
+    cy.get('.field-value').contains(message).should('be.visible')
 
   })
 })
