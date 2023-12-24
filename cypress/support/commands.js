@@ -30,7 +30,7 @@ Cypress.Commands.add('getByTestData', (selector) => {
 })
 
 Cypress.Commands.add('getByClass', (selector) => {
-    return cy.get(`.${selector}]`)
+    return cy.get(`.${selector}`)
 })
 
 Cypress.Commands.add('getById', (selector) => {
