@@ -14,15 +14,16 @@ describe('Forms, Buttons & Checkbox', () => {
 
     // Load the form
     cy.visit('https://practice-automation.com/form-fields/')
-    cy.get('[data-test="contact-form"]').should('be.visible')
+    cy.getByTestData('contact-form').should('be.visible')
+
 
     // Fill the form
-    cy.get('#g1103-name').type(name)
+    cy.getById('g1103-name').type(name)
     cy.contains(drink).click() 
     cy.contains(color).click()  
     // cy.get('#g1103-whatisyourfavoritedrink-Water').check() - an alternative way
-    cy.get('#email').type(email)
-    cy.get('#contact-form-comment-message').type(message)
+    cy.getById('email').type(email)
+    cy.getById('contact-form-comment-message').type(message)
     cy.contains('Submit').click()
 
     // Assert form details
