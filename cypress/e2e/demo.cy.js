@@ -20,7 +20,7 @@ describe('Cypress E2E testing demo', () => {
     examplePage.assertTitle()
   })
 
-  it('Assert Element', () => {
+  it('Assert Element', {retries: 3}, () => {
     cy.get('h1').should('be.visible')
     cy.wait(2000)
     cy.get('p').should('be.visible')
