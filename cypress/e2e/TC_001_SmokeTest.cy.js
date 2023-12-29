@@ -9,6 +9,6 @@ describe('TC_001_Smoke_Test', () => {
 
         cy.get('#cat').should('be.visible')
         
-        cy.get('#fotcont').should('be.visibleclear')
+        cy.get('#fotcont').should('be.visible')
     })
   })
